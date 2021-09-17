@@ -25,6 +25,7 @@ class GameViewController: UIViewController {
     var kennyH = 0
     var timer1 = Timer()
     var timer2 = Timer()
+    var interval = 0.2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class GameViewController: UIViewController {
         kennyDefFunc()
         
         timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer),userInfo: nil,repeats: true)
-        timer2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(kennyRun),userInfo: nil,repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(kennyRun),userInfo: nil,repeats: true)
 
         
         
@@ -109,7 +110,7 @@ class GameViewController: UIViewController {
                 print("OKEY")
                 self.time = 30
                 self.kennyImage.isUserInteractionEnabled = true
-                self.timer2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.kennyRun),userInfo: nil,repeats: true)
+                self.timer2 = Timer.scheduledTimer(timeInterval: self.interval, target: self, selector: #selector(self.kennyRun),userInfo: nil,repeats: true)
                 //TODO
             }
             
