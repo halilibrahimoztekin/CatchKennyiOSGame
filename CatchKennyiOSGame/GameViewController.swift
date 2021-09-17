@@ -36,9 +36,9 @@ class GameViewController: UIViewController {
         kennyX = Int.random(in: 0..<Int(viewScreenW)-60)
         kennyY = Int.random(in: Int(timerSecond.frame.maxY)..<Int(myHighScore.frame.minY))
         kennyDefFunc()
+        
         timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer),userInfo: nil,repeats: true)
         timer2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(kennyRun),userInfo: nil,repeats: true)
-        
 
         
         
@@ -46,6 +46,27 @@ class GameViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func mainFunc( ){
+        
+        
+        myLabelFunc()
+        timerFunc()
+        myHighFunc()
+        gestureKennyFunc()
+        alertFunc()
+        timerFunc()
+    
+    
+    }
+    
+    func timeFunc( ){
+        
+       
+        
+        
     }
     
     @objc func kennyRun(timer2: Timer)
@@ -66,6 +87,13 @@ class GameViewController: UIViewController {
                        y: self.view.frame.midY-84/2,
                        width: 60,
                        height: 84)
+            timer2.invalidate()
+            if !timer2.isValid {
+                alertFunc()
+            }
+            
+            
+            
             
             
         }
@@ -77,16 +105,17 @@ class GameViewController: UIViewController {
     func alertFunc(){
         if self.time == 0 {
             let alertFinish = UIAlertController(title: "Zaman Doldu", message: "Tekrar Oynamak İster Misiniz?", preferredStyle: .alert)
-            let alertActionOK = UIAlertAction(title: "OKEY", style: .default) { UIAlertAction in
+            let alertActionOK = UIAlertAction(title: "Tekrar Oyna", style: .default) { UIAlertAction in
                 print("OKEY")
                 self.time = 30
                 self.kennyImage.isUserInteractionEnabled = true
+                self.timer2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.kennyRun),userInfo: nil,repeats: true)
                 //TODO
             }
             
             alertFinish.addAction(alertActionOK)
             
-            alertFinish.addAction(UIAlertAction(title: "Tekrar Başlat", style: UIAlertAction.Style.cancel, handler: nil))
+            alertFinish.addAction(UIAlertAction(title: "Anasayfa", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alertFinish, animated: true, completion: nil)
         }
         
@@ -116,17 +145,7 @@ class GameViewController: UIViewController {
     myScoreNow.text = "Score: \(scoreNow)"
     }
     
-    func mainFunc( ){
-        
-        
-        myLabelFunc()
-        timerFunc()
-        myHighFunc()
-        gestureKennyFunc()
-        alertFunc()
-    
-    
-    }
+  
     
     
     func kennyDefFunc (){
