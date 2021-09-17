@@ -34,10 +34,10 @@ class GameViewController: UIViewController {
         
         
         kennyX = Int.random(in: 0..<Int(viewScreenW)-60)
-        kennyY = Int.random(in: Int(myScoreNow.frame.maxY)..<Int(myHighScore.frame.minY))
+        kennyY = Int.random(in: Int(timerSecond.frame.maxY)..<Int(myHighScore.frame.minY))
         kennyDefFunc()
         timer1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer),userInfo: nil,repeats: true)
-        timer2 = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(kennyRun),userInfo: nil,repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(kennyRun),userInfo: nil,repeats: true)
         
 
         
@@ -55,12 +55,43 @@ class GameViewController: UIViewController {
         
         if time > 0 {
             kennyX = Int.random(in: 0..<Int(viewScreenW)-60)
-            kennyY = Int.random(in: Int(myScoreNow.frame.maxY)..<Int(myHighScore.frame.minY))
-            kennyImage.frame = CGRect(x: kennyX+84/2, y: kennyY-60/3, width: 60, height: 84)
+            kennyY = Int.random(in: Int(timerSecond.frame.maxY+84)..<Int(myHighScore.frame.minY))
+            kennyImage.frame = CGRect(x: kennyX, y: kennyY-84, width: 60, height: 84)
+        }
+        else if time <= 0 {
+            
+            kennyImage.isUserInteractionEnabled = false
+            kennyImage.frame = CGRect(
+                       x: self.view.frame.midX-84/2,
+                       y: self.view.frame.midY-84/2,
+                       width: 60,
+                       height: 84)
+            
+            
         }
         
         
     }
+    
+    
+    func alertFunc(){
+        if self.time == 0 {
+            let alertFinish = UIAlertController(title: "Zaman Doldu", message: "Tekrar Oynamak İster Misiniz?", preferredStyle: .alert)
+            let alertActionOK = UIAlertAction(title: "OKEY", style: .default) { UIAlertAction in
+                print("OKEY")
+                self.time = 30
+                self.kennyImage.isUserInteractionEnabled = true
+                //TODO
+            }
+            
+            alertFinish.addAction(alertActionOK)
+            
+            alertFinish.addAction(UIAlertAction(title: "Tekrar Başlat", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(alertFinish, animated: true, completion: nil)
+        }
+        
+    }
+    
     
     @objc func fireTimer(timer1: Timer)
     {
@@ -92,6 +123,7 @@ class GameViewController: UIViewController {
         timerFunc()
         myHighFunc()
         gestureKennyFunc()
+        alertFunc()
     
     
     }
@@ -100,7 +132,7 @@ class GameViewController: UIViewController {
     func kennyDefFunc (){
         
         kennyImage.image = UIImage(named: "Kenny")
-        kennyImage.frame = CGRect(x: kennyX+84/2, y: kennyY-60/3, width: 60, height: 84)
+        kennyImage.frame = CGRect(x: kennyX+84/2, y: kennyY-84, width: 60, height: 84)
         self.view.addSubview(kennyImage)
     }
     
@@ -108,8 +140,9 @@ class GameViewController: UIViewController {
         
         timerSecond.text = "Last \(time) Sec."
         timerSecond.textAlignment = .center
-        timerSecond.frame = CGRect(x: myScoreNow.frame.minX, y: myScoreNow.frame.maxY + 3, width: myScoreNow.frame.width, height: myScoreNow.frame.height)
+        timerSecond.frame = CGRect(x: myScoreNow.frame.minX, y: myScoreNow.frame.maxY, width: myScoreNow.frame.width, height: myScoreNow.frame.height)
         self.view.addSubview(timerSecond)
+        print(timerSecond.frame)
     }
     
     
