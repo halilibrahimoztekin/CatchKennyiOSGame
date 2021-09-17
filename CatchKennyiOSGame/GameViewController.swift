@@ -11,7 +11,7 @@ class GameViewController: UIViewController {
 //    HighScore Text, HighScore İnt, İmageView
     
     var scoreNow : Int = 0
-    let myHighScoreInt : Int = 0
+    var myHighScoreInt : Int = 0
     var time = 10
     var viewScreenW: CGFloat = 0.0
     var viewScreenH: CGFloat = 0.0
@@ -25,7 +25,8 @@ class GameViewController: UIViewController {
     var kennyH = 0
     var timer1 = Timer()
     var timer2 = Timer()
-    var interval = 0.2
+    var interval = 1.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,8 @@ class GameViewController: UIViewController {
                        y: self.view.frame.midY-84/2,
                        width: 60,
                        height: 84)
+            highScoreDef()
+            myHighFunc()
             timer2.invalidate()
             if !timer2.isValid {
                 alertFunc()
@@ -101,7 +104,21 @@ class GameViewController: UIViewController {
         
         
     }
-    
+    func highScoreDef( )
+    {
+        
+        if scoreNow > myHighScoreInt {
+            UserDefaults.standard.setValue(myHighScoreInt, forKey: "HighScore")
+        }
+        var storedHighScore = UserDefaults.standard.object(forKey: "HighScore")
+        if storedHighScore as? Int != nil {
+            myHighScoreInt = (storedHighScore as? Int)!
+        }
+        print(myHighScoreInt)
+        
+        
+        
+    }
     
     func alertFunc(){
         if self.time == 0 {
@@ -116,9 +133,15 @@ class GameViewController: UIViewController {
             
             alertFinish.addAction(alertActionOK)
             
-            alertFinish.addAction(UIAlertAction(title: "Anasayfa", style: UIAlertAction.Style.cancel, handler: nil))
+            alertFinish.addAction(UIAlertAction(title: "Anasayfa", style: UIAlertAction.Style.cancel, handler: {action in  self.alertMainVC()}))
             self.present(alertFinish, animated: true, completion: nil)
         }
+        
+    }
+    func alertMainVC()
+    {
+        
+        performSegue(withIdentifier: "GameToMainVC", sender: nil)
         
     }
     
@@ -180,7 +203,7 @@ class GameViewController: UIViewController {
         
         myHighScore.text = "High Score: \(myHighScoreInt)"
         myHighScore.textAlignment = .center
-        myHighScore.frame = CGRect(x: viewScreenW*0.5-100/2, y: viewScreenH*0.97-50/2, width: 100, height: 50)
+        myHighScore.frame = CGRect(x: viewScreenW*0.5-100/2, y: viewScreenH*0.97-50/2, width: 150, height: 50)
         self.view.addSubview(myHighScore)
         
     }
