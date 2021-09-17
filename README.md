@@ -8,10 +8,17 @@ WHAT I LEARNED HERE?
 
 
 Basic Swift 5 
+
 Gestures
+
 Segue
+
 Functions
+
 Timer
+
 Alerview 
+
 Navigation Controller
+
 iOS Lifecycle
