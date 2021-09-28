@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="CatchKennyiOSGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeM-oM-2Zu">
-                                <rect key="frame" x="80" y="518" width="254" height="41"/>
+                                <rect key="frame" x="80" y="606" width="254" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catch Kenny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZW-fM-gc0">
-                                <rect key="frame" x="80" y="429" width="254" height="29"/>
+                                <rect key="frame" x="80" y="517" width="254" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,46 +36,49 @@
                                     <constraint firstAttribute="height" constant="147" id="SRo-i4-my1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elJ-eR-eEr">
-                                <rect key="frame" x="201" y="784" width="12" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auf-X9-dvu">
-                                <rect key="frame" x="138" y="718" width="138" height="24"/>
+                                <rect key="frame" x="138" y="806" width="138" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Kenny" translatesAutoresizingMaskIntoConstraints="NO" id="wCs-Sz-iQi">
-                                <rect key="frame" x="80" y="74" width="160" height="271"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBb-Eb-jwN">
+                                <rect key="frame" x="0.0" y="841" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kenny" translatesAutoresizingMaskIntoConstraints="NO" id="wCs-Sz-iQi">
+                                <rect key="frame" x="127" y="96" width="160" height="271"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="elJ-eR-eEr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2EE-y2-N3i"/>
                             <constraint firstItem="ol2-3h-BpV" firstAttribute="centerX" secondItem="EeM-oM-2Zu" secondAttribute="centerX" id="2a0-ae-0vR"/>
-                            <constraint firstItem="elJ-eR-eEr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="201" id="CD2-8p-bq0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AZW-fM-gc0" secondAttribute="trailing" constant="80" id="EOk-vB-PUh"/>
+                            <constraint firstItem="jBb-Eb-jwN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GJA-ta-SO5"/>
                             <constraint firstItem="auf-X9-dvu" firstAttribute="top" secondItem="ol2-3h-BpV" secondAttribute="bottom" constant="4" id="JqZ-3h-hLN"/>
                             <constraint firstItem="ol2-3h-BpV" firstAttribute="top" secondItem="EeM-oM-2Zu" secondAttribute="bottom" constant="8" id="Kjf-Ll-ZKR"/>
-                            <constraint firstItem="wCs-Sz-iQi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="87" id="NXA-oZ-9G8"/>
-                            <constraint firstItem="auf-X9-dvu" firstAttribute="centerX" secondItem="elJ-eR-eEr" secondAttribute="centerX" id="OGl-BR-IB7"/>
+                            <constraint firstItem="wCs-Sz-iQi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="NXA-oZ-9G8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EeM-oM-2Zu" secondAttribute="trailing" constant="80" id="Qa1-dj-R8E"/>
+                            <constraint firstItem="jBb-Eb-jwN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SbY-2v-9ue"/>
                             <constraint firstItem="auf-X9-dvu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="Vhh-fU-pnY"/>
                             <constraint firstItem="ol2-3h-BpV" firstAttribute="centerX" secondItem="auf-X9-dvu" secondAttribute="centerX" id="ZMH-Tb-E2C"/>
                             <constraint firstItem="ol2-3h-BpV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="aJh-ts-cBh"/>
                             <constraint firstItem="EeM-oM-2Zu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="bT8-iF-Jz0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wCs-Sz-iQi" secondAttribute="trailing" constant="80" id="cnA-qB-nGa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wCs-Sz-iQi" secondAttribute="trailing" constant="127" id="cnA-qB-nGa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jBb-Eb-jwN" secondAttribute="trailing" id="dgk-7I-biO"/>
                             <constraint firstItem="AZW-fM-gc0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="htH-SB-r8I"/>
-                            <constraint firstItem="AZW-fM-gc0" firstAttribute="top" secondItem="wCs-Sz-iQi" secondAttribute="bottom" constant="71" id="lJU-pq-N4W"/>
-                            <constraint firstItem="wCs-Sz-iQi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="lOk-Dp-NzP"/>
+                            <constraint firstItem="AZW-fM-gc0" firstAttribute="top" secondItem="wCs-Sz-iQi" secondAttribute="bottom" constant="150" id="lJU-pq-N4W"/>
+                            <constraint firstItem="wCs-Sz-iQi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="lOk-Dp-NzP"/>
                             <constraint firstItem="EeM-oM-2Zu" firstAttribute="top" secondItem="AZW-fM-gc0" secondAttribute="bottom" constant="60" id="pBJ-bR-rqC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fxg-H2-9jI"/>
+                    <connections>
+                        <outlet property="textscr" destination="jBb-Eb-jwN" id="DYa-v7-pSX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,7 +89,7 @@
             <objects>
                 <viewController storyboardIdentifier="GameViewController" id="yO7-g7-KVV" customClass="GameViewController" customModule="CatchKennyiOSGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bA-dV-VYe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Vog-zs-3AY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,7 +123,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OCc-Tj-Cc4"/>
+        <segue reference="8Y5-PB-6Ep"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Kenny" width="200" height="271"/>

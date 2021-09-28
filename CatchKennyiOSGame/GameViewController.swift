@@ -32,7 +32,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         viewScreenW  = view.frame.size.width
         viewScreenH  = view.frame.size.height
+       
         mainFunc()
+        
         
         
         kennyX = Int.random(in: 0..<Int(viewScreenW)-60)
@@ -52,11 +54,12 @@ class GameViewController: UIViewController {
     
     
     func mainFunc( ){
-        
+        highScoreDef()
         
         myLabelFunc()
         timerFunc()
         myHighFunc()
+        
         gestureKennyFunc()
         alertFunc()
         timerFunc()
@@ -108,7 +111,7 @@ class GameViewController: UIViewController {
     {
         
         if scoreNow > myHighScoreInt {
-            UserDefaults.standard.setValue(myHighScoreInt, forKey: "HighScore")
+            UserDefaults.standard.setValue(scoreNow, forKey: "HighScore")
         }
         var storedHighScore = UserDefaults.standard.object(forKey: "HighScore")
         if storedHighScore as? Int != nil {
@@ -200,10 +203,11 @@ class GameViewController: UIViewController {
         print(myScoreNow.frame)
     }
     func myHighFunc( ){
+       
         
         myHighScore.text = "High Score: \(myHighScoreInt)"
         myHighScore.textAlignment = .center
-        myHighScore.frame = CGRect(x: viewScreenW*0.5-100/2, y: viewScreenH*0.97-50/2, width: 150, height: 50)
+        myHighScore.frame = CGRect(x: viewScreenW*0.5-150*0.5, y: viewScreenH*0.97-50/2, width: 150, height: 50)
         self.view.addSubview(myHighScore)
         
     }
