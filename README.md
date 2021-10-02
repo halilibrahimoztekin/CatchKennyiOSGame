@@ -23,4 +23,4 @@ Navigation Controller
 iOS Lifecycle
 
 
-![Alt text](/CatchKennyiOSGame/CatchKennyiOSGame/ScreenShots/ss1.png?raw=true "Optional Title")
+![Alt text](/CatchKennyiOSGame/CatchKennyiOSGame/ScreenShots/ss1.png?raw=false "Optional Title")
