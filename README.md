@@ -23,3 +23,10 @@ Navigation Controller
 iOS Lifecycle
 
 ![Alt text](https://github.com/halilibrahimoztekin/CatchKennyiOSGame/blob/main/CatchKennyiOSGame/ScreenShots/ss1.png "Optional title")
+![Alt text](https://github.com/halilibrahimoztekin/CatchKennyiOSGame/blob/main/CatchKennyiOSGame/ScreenShots/ss2.png "Optional title")
+
+![Alt text](https://github.com/halilibrahimoztekin/CatchKennyiOSGame/blob/main/CatchKennyiOSGame/ScreenShots/ss3.png "Optional title")
+![Alt text](https://github.com/halilibrahimoztekin/CatchKennyiOSGame/blob/main/CatchKennyiOSGame/ScreenShots/ss4.png "Optional title")
+![Alt text](https://github.com/halilibrahimoztekin/CatchKennyiOSGame/blob/main/CatchKennyiOSGame/ScreenShots/ss5.png "Optional title")
+
+
